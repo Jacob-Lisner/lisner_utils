@@ -58,10 +58,10 @@ def main(
                     print("------------------------------")
                     print(lex_name)
                     if inds:
-                        fold = re.search("\\\\([^\\\\_]*)[^\\\\]*\\\\[^\\\\]*$", count_path).groups()[0]+"\\"+lex_name
+                        fold = os.path.join(os.path.split(os.path.dirname(count_path))[1]+"_Inds_1Perc", lex_name)
                     else:
-                        fold = re.search("\\\\([^\\\\_]*)[^\\\\]*\\\\[^\\\\]*$", count_path).groups()[0]+"\\"+lex_name
-                    folder = './!Lexicon_Counts/'+fold
+                        fold = os.path.join(os.path.split(os.path.dirname(count_path))[1], lex_name)
+                    folder = './lisner_utils/!Lexicon_Counts/'+fold
                     if not os.path.exists(folder):
                         os.mkdir(folder)
                     lexicon = lx.load_master(lex_name)

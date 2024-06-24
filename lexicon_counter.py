@@ -25,7 +25,7 @@ def main(
         paper_folders,
         inds = False,
         processes=mp.cpu_count(),
-        big_path = loc_refs("big_word_10000"),
+        big_path = loc_refs.main("big_word_10000"),
         types = [
             'Front Page/Cover Story', 
             'Front Matter',

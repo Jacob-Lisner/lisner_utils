@@ -3,19 +3,11 @@ from os.path import dirname
 sys.path.append(dirname(__file__))
 
 import re
-import os
-import time
-import pandas as pd
-import numpy as np
-import pickle
 import json
 from bs4 import BeautifulSoup
 from lxml import etree
-import time
-import datetime
 import warnings
-import sys, importlib
-import multiprocessing as mp
+import sys
 import ast
 
 from lisner_utils import text_parser as txp
@@ -93,7 +85,7 @@ def get_words_mini(dat, global_dict):
             global_dict[word] += paper[word]
     return
 #
-def get_lex(dat, types, lexicon, tot, thresh, thresh_start, time_start, lex_norm = None, type_check=True, ind_c=False):
+def get_lex(dat, types, lexicon,  lex_norm = None, type_check=True, ind_c=False):
     count, inf = dat[0], dat[1]
     try:
         data = json.loads(inf)

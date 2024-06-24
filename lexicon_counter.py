@@ -24,6 +24,7 @@ def count_intake(path):
 def main(
         lex_names, 
         paper_folders,
+        output_folder,
         inds = False,
         processes=mp.cpu_count(),
         big_path = os.path.abspath(os.path.join(str(pathlib.Path(__file__).parent.resolve()), loc_refs.main("big_word_10000"))),
@@ -61,7 +62,7 @@ def main(
                     fold = os.path.join(os.path.split(os.path.dirname(count_path))[1]+"_Inds", lex_name)
                 else:
                     fold = os.path.join(os.path.split(os.path.dirname(count_path))[1], lex_name)
-                folder = './lisner_utils/!Lexicon_Counts/'+fold
+                folder = os.path.join(output_folder, fold)
                 if not os.path.exists(folder):
                     os.makedirs(folder)
                 lexicon = lx.load_master(lex_name)

@@ -1,5 +1,6 @@
 import sys
 import os
+import pathlib
 sys.path.append(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))
 
 import pickle
@@ -25,7 +26,7 @@ def main(
         paper_folders,
         inds = False,
         processes=mp.cpu_count(),
-        big_path = loc_refs.main("big_word_10000"),
+        big_path = os.path.abspath(os.path.join(str(pathlib.Path(__file__).parent.resolve()), loc_refs.main("big_word_10000"))),
         types = [
             'Front Page/Cover Story', 
             'Front Matter',

@@ -15,7 +15,6 @@ import multiprocessing as mp
 import ast
 from lisner_utils import text_parser as txp
 
-
 def getxmlcontent(root):
     if root.find('.//HiddenText') is not None:
         return root.find('.//HiddentText').text

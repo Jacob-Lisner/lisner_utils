@@ -2,8 +2,6 @@ import os
 import re
 import pysbd
 import string
-import nltk
-import traceback
 
 
 #text preprocessing to work well with pysbd

@@ -5,7 +5,6 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))
 
 import pickle
 import os
-import re
 import multiprocessing as mp
 from multiprocessing import get_context
 

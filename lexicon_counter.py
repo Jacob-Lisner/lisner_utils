@@ -63,12 +63,12 @@ def main(
                     fold = os.path.join(os.path.split(os.path.dirname(count_path))[1], lex_name)
                 folder = './lisner_utils/!Lexicon_Counts/'+fold
                 if not os.path.exists(folder):
-                    os.mkdir(folder)
+                    os.makedirs(folder)
                 lexicon = lx.load_master(lex_name)
                 temp = partial(mpd.get_lex, types = types, lexicon=lexicon, tot=0, thresh=0, thresh_start=0, time_start = 0, lex_norm=lex_norm, type_check=False, ind_c=inds)
                 #temp = partial(mpd.get_lex2, path = os.path.abspath(folder+'\\'+paper_name+'_'+lex_name+'_norm-big0'), types = types, lexicon=lexicon, tot=0, thresh=0, thresh_start=0, time_start = 0, lex_norm=lex_norm, type_check=False, ind_c=inds)
 
-                with open(folder+'/'+paper_name+'_'+lex_name+'.txt', 'w') as f:
+                with open(os.path.join(folder,paper_name+'_'+lex_name+'.txt'), 'w') as f:
                     for paper in pool.imap_unordered(temp, 
                                                     count_intake(os.path.abspath(count_path)), 
                                                     chunksize=1000):

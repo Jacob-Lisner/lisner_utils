@@ -10,6 +10,7 @@ from multiprocessing import get_context
 
 from lisner_utils import multi_process_dump as mpd
 from lisner_utils import lexicon as lx
+from lisner_utils import loc_refs
 from functools import partial
 
 def count_intake(path):
@@ -24,7 +25,7 @@ def main(
         paper_folders,
         inds = False,
         processes=mp.cpu_count(),
-        big_path = "10000_word_dictionary.pickle",
+        big_path = loc_refs("big_word_10000"),
         types = [
             'Front Page/Cover Story', 
             'Front Matter',

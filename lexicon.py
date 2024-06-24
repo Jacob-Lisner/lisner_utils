@@ -2,10 +2,7 @@ import pandas as pd
 import pathlib
 import gdown
 
-import sys
-from os.path import dirname
-sys.path.append(dirname(__file__))
-from lisner_utils2 import loc_refs, cache
+from lisner_utils import loc_refs, cache
 
 import os
 

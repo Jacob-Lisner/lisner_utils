@@ -4,12 +4,8 @@ import re
 import multiprocessing as mp
 from multiprocessing import get_context
 
-import sys
-from os.path import dirname
-sys.path.append(dirname(__file__))
-
-from lisner_utils2 import multi_process_dump as mpd
-from lisner_utils2 import lexicon as lx
+from lisner_utils import multi_process_dump as mpd
+from lisner_utils import lexicon as lx
 from functools import partial
 
 def count_intake(path):

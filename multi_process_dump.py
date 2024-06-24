@@ -13,7 +13,11 @@ import warnings
 import sys, importlib
 import multiprocessing as mp
 import ast
-from lisner_utils import text_parser as txp
+
+import sys
+from os.path import dirname
+sys.path.append(dirname(__file__))
+from lisner_utils2 import text_parser as txp
 
 def getxmlcontent(root):
     if root.find('.//HiddenText') is not None:

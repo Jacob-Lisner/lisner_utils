@@ -1,7 +1,12 @@
 import pandas as pd
 import pathlib
 import gdown
-from lisner_utils import loc_refs, cache
+
+import sys
+from os.path import dirname
+sys.path.append(dirname(__file__))
+from lisner_utils2 import loc_refs, cache
+
 import os
 
 #load from singular lexicon csv

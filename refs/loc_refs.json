@@ -5,7 +5,5 @@
   "lexicon_master_id_0" : "0",
   "lexicon_master_id_1" : "2092799351",
   "lexicon_master_temp" : "refs\\lexicon_master_temp.csv",
-  "lexicon_reference_temp" : "refs\\lexicon_refence_temp.csv",
-  "roget_mapper" : "refs\\roget_mapper.pickle",
-  "roget_mapper_2" : "refs\\roget_mapper_5.pickle"
+  "lexicon_reference_temp" : "refs\\lexicon_refence_temp.csv"
 }

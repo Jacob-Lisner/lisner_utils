@@ -157,14 +157,24 @@ def get_date_sum(path,
                  week_range, 
                  day_offset = 0, 
                  gap = 7, 
-                 gap_type = 'days', 
-                 rolling = False, 
+                 gap_type = 'days',
+                 is_dir = True,
+                 mod_type = None,
                  roll=7, 
-                 diff = False, 
-                 is_dir = True, 
-                 sub = False, 
-                 inds = None,
+                 diff = False,
+                 ind_i = None,
                  ret_tot = False):
+    
+    inds = None
+    sub = False
+    rolling = False
+    if mod_type == 'Inds':
+        inds = ind_i
+    elif mod_type == 'Subs':
+        sub = True
+    elif(mod_type == 'Rolling'):
+        rolling = True
+
     subs = sub    
     if is_dir:
         files = []
@@ -337,5 +347,5 @@ def get_date_sum(path,
             data_alex[i][4] = lex_sums[i]
             data_alex[i][5] = word_sums[i]
             data_alex[i][6] = doc_sums[i]
-            
+
     return data_alex

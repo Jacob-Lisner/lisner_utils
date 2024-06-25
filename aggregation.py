@@ -368,7 +368,7 @@ def aggregate(
     data = get_date_sum(input_path, week_range, day_offset, gap, gap_type, is_dir, mod_type, roll, diff, ind_i, ret_tot)
     cols = []
     if(ret_tot):
-        df = pd.DataFrame(data, columns = ['Date', 'Raw Day', 'Percent', 'Label'])
-    else:
         df = pd.DataFrame(data, columns = ['Date', 'Raw Day', 'Percent', 'Label', 'Lexicon Count', 'Word Count', 'Document Count'])
+    else:
+        df = pd.DataFrame(data, columns = ['Date', 'Raw Day', 'Percent', 'Label'])
     return df

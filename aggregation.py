@@ -9,6 +9,7 @@ import os
 import time
 import datetime
 import numpy as np
+import pandas as pd
 import sys
 from dateutil.relativedelta import relativedelta
 from IPython.core.display import display, HTML
@@ -349,3 +350,25 @@ def get_date_sum(path,
             data_alex[i][6] = doc_sums[i]
 
     return data_alex
+
+def aggregate(  
+        input_path,
+        output_path,
+        week_range, 
+        day_offset = 0, 
+        gap = 7, 
+        gap_type = 'days',
+        is_dir = True,
+        mod_type = None,
+        roll=7, 
+        diff = False,
+        ind_i = None,
+        ret_tot = False
+    ):
+    data = get_data_sum(input_path, week_range, day_offset, gap, gap_type, is_dir, mod_type, roll, diff, ind_i, ret_tot)
+    cols = []
+    if(ret_tot):
+        df = pd.DataFrame(data, columns = ['Date', 'Raw Day', 'Percent', 'Label'])
+    else:
+        df = pd.DataFrame(data, columns = ['Date', 'Raw Day', 'Percent', 'Label', 'Lexicon Count', 'Word Count', 'Document Count'])
+    return df

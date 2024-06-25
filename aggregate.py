@@ -156,7 +156,6 @@ def date_aggregate(files, subs = False, inds = None):
 def get_date_sum(path, 
                  week_range, 
                  day_offset = 0, 
-                 label = 'Alexandria Gazzette', 
                  gap = 7, 
                  gap_type = 'days', 
                  rolling = False, 
@@ -329,15 +328,14 @@ def get_date_sum(path,
         data_alex[i][1] = dates[i]
         data_alex[i][2] = delta_date(st, dates[i])
         data_alex[i][0] = all_perc[i]
-        data_alex[i][3] = label
         if(subs):
-            data_alex[i][4] = rolls[i//len(weeks)]
+            data_alex[i][3] = rolls[i//len(weeks)]
         else:
-            data_alex[i][4] = roll
+            data_alex[i][3] = "NA"
         
         if ret_tot:
-            data_alex[i][5] = lex_sums[i]
-            data_alex[i][6] = word_sums[i]
-            data_alex[i][7] = doc_sums[i]
-
+            data_alex[i][4] = lex_sums[i]
+            data_alex[i][5] = word_sums[i]
+            data_alex[i][6] = doc_sums[i]
+            
     return data_alex

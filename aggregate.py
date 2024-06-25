@@ -330,9 +330,9 @@ def get_date_sum(path,
             
             
     if ret_tot:
-        data_alex = np.zeros((len(dates),8)).astype('object')
+        data_alex = np.zeros((len(dates),7)).astype('object')
     else:
-        data_alex = np.zeros((len(dates),5)).astype('object')
+        data_alex = np.zeros((len(dates),4)).astype('object')
 
     for i in range(0, data_alex.shape[0]):
         data_alex[i][1] = dates[i]

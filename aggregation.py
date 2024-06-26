@@ -371,4 +371,9 @@ def aggregate(
         df = pd.DataFrame(data, columns = ['Date', 'Raw Day', 'Percent', 'Label', 'Lexicon Count', 'Word Count', 'Document Count'])
     else:
         df = pd.DataFrame(data, columns = ['Date', 'Raw Day', 'Percent', 'Label'])
-    return df
+    
+    df_c2 = df.drop_duplicates(subset=['Raw Day', 'Label'], keep='last')
+    df_complete_sort = df_c2.sort_values(by=['Date'], kind='mergesort')
+    df = df_complete_sort.sort_values(by=['Label'], kind='mergesort')
+    df.to_csv(output_path)
+    return

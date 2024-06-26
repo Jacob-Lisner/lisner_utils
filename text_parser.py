@@ -21,7 +21,7 @@ def prep_text(text_orig, poem_mode = False):
 
 
 #gets a list of sentences
-def ex_sentence(text, seg = None, poem_mode = False, pre = False):
+def ex_sentence(text, seg = None, poem_mode = False):
     if seg is None:
         seg = pysbd.Segmenter(language="en", clean = True)
     txt = prep_text(text, poem_mode=poem_mode)

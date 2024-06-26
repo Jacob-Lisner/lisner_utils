@@ -379,5 +379,5 @@ def aggregate(
 
     if not os.path.exists(output_folder):
         os.makedirs(output_folder)
-    df.to_csv(output_folder+'/'+output_name)
+    df.to_csv(output_folder+'/'+output_name, index=False)
     return

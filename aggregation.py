@@ -369,9 +369,9 @@ def aggregate(
     data = get_date_sum(input_path, week_range, day_offset, gap, gap_type, is_dir, mod_type, roll, diff, ind_i, ret_tot)
     cols = []
     if(ret_tot):
-        df = pd.DataFrame(data, columns = ['Date', 'Raw Day', 'Percent', 'Label', 'Lexicon Count', 'Word Count', 'Document Count'])
+        df = pd.DataFrame(data, columns = ['Percent', 'Date', 'Raw Day', 'Label', 'Lexicon Count', 'Word Count', 'Document Count'])
     else:
-        df = pd.DataFrame(data, columns = ['Date', 'Raw Day', 'Percent', 'Label'])
+        df = pd.DataFrame(data, columns = ['Percent', 'Date', 'Raw Day', 'Label'])
     
     df_c2 = df.drop_duplicates(subset=['Raw Day', 'Label'], keep='last')
     df_complete_sort = df_c2.sort_values(by=['Date'], kind='mergesort')

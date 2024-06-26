@@ -96,7 +96,6 @@ def text_to_words(text, num = False):
 #valid entities include:
 #  "raw" - return the raw text
 #  "words" - return the raw tokens of text
-#  "word_dict" - grabs word counts with a generic re
 #  "word_total" - grabs the total number of words
 #  "sents" - uses modified psybd parser to get sentences
 #  "sents_words" - grabs the tokens of sentence

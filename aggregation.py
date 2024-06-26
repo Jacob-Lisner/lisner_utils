@@ -353,7 +353,8 @@ def get_date_sum(path,
 
 def aggregate(  
         input_path,
-        output_path,
+        output_folder,
+        output_name,
         week_range, 
         day_offset = 0, 
         gap = 7, 
@@ -375,5 +376,8 @@ def aggregate(
     df_c2 = df.drop_duplicates(subset=['Raw Day', 'Label'], keep='last')
     df_complete_sort = df_c2.sort_values(by=['Date'], kind='mergesort')
     df = df_complete_sort.sort_values(by=['Label'], kind='mergesort')
-    df.to_csv(output_path)
+
+    if not os.path.exists(output_folder):
+        os.makedirs(output_folder)
+    df.to_csv(output_folder+'/'+output_name)
     return

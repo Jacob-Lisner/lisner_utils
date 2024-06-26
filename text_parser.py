@@ -59,7 +59,7 @@ start = "[^\s\'\"\(\{\[“‘]"
 con_segs = ["[a-zA-Z0-9](?:[a-zA-Z0-9]*(?:[\-\'’][a-zA-Z0-9]+)+|[a-zA-Z0-9]+)",  #all lower case (2 letter min, hyphens and apost)
             #"[A-Z](?:[A-Z]*(?:[\-\'][A-Z]+)+|[A-Z]+)",  #all upper case ('')
             #"[A-Z](?:[a-z]*(?:[\-\'][a-z]+)+|[a-z]+)",  #upper start then rest lowercase ('')
-            "A", "a", "I"]                             #single letter words
+            "A", "a", "I", "[0-9]"]                             #single letter words
 content = con_segs[0]
 for i in range(1, len(con_segs)):
     content += "|" + con_segs[i]

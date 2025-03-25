@@ -1,2 +1,2 @@
 # lisner_utils
- All the utils for the agency project
+This package is a series of text manipulation tools to help with lexical analysis.
